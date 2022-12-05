@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/page.js',
+    entry: './src/service/page.js',
     mode: 'development',
     output: {
         filename: 'main.js',
