@@ -80,7 +80,9 @@ form.onsubmit = (e) => {
     //if eField and pField doesn't contains error class that mean user filled details properly
     if (!eField.classList.contains("error") && !pField.classList.contains("error")) {
         window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
+        // credential.issue("University Degree", "Bachelor Degree", "Bachelor of IT", "0x5FbDB2315678afecb367f032d93F642f64180aa3")
+        // credential.createPresentation(pInput.value);
+        credential.verifyPresentation(pInput.value);
         // axiosRequest.login(eInput.value, pInput.value);
-        credential.issue("University Degree", "Bachelor Degree", "Bachelor of IT", "0x5FbDB2315678afecb367f032d93F642f64180aa3")
     }
 }
