@@ -1,6 +1,6 @@
 const Web3 = require("web3");
 const axios = require("axios");
-const {personalSign} = require("@metamask/eth-sig-util");
+const { personalSign } = require("@metamask/eth-sig-util");
 const form = document.querySelector("form");
 eField = form.querySelector(".email");
 eInput = eField.querySelector("input");
@@ -87,7 +87,7 @@ metamaskButton.onclick = () => {
 async function loginWithMetamask() {
     const web3 = new Web3(window.ethereum);
     ethereum
-        .request({method: "eth_requestAccounts"})
+        .request({ method: "eth_requestAccounts" })
         .then((accounts) => {
             const account = accounts[0];
             console.log(account);
@@ -118,7 +118,9 @@ async function loginWithMetamask() {
 }
 
 form.onsubmit = (e) => {
-    e.preventDefault(); //preventing from form submitting
+    //preventing from form submitting
+    e.preventDefault(); 
+
     //if email and password is blank then add shake class in it else call specified function
     (eInput.value === "") ? eField.classList.add("shake", "error") : checkEmail();
     (pInput.value === "") ? pField.classList.add("shake", "error") : checkPass();
